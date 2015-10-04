@@ -10,7 +10,7 @@ class EchohandlerProtocol(WebSocketServerProtocol):
 
     def onConnect(self, request):
         print "Client connecting: %s" % request.peer
-        self.factory.addConnection(request.peer, self)
+        self.factory.connectionHandler.addConnection(request.peer, self)
 
     def onOpen(self):
         print "Websocket Connection Open"
